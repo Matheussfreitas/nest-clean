@@ -16,7 +16,7 @@ function generateUniqueDatabaseUrl(schemaId: string): string {
 
 const schemaId = randomUUID();
 
-beforeAll(async () => {
+beforeAll(() => {
   const databaseUrl = generateUniqueDatabaseUrl(schemaId);
   process.env.DATABASE_URL = databaseUrl;
   execSync('npx prisma migrate deploy');

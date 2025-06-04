@@ -9,7 +9,7 @@ import { JwtStrategy } from './jwt.strategy';
   imports: [
     PassportModule,
     JwtModule.registerAsync({
-      inject: [],
+      inject: [ConfigService],
       useFactory(config: ConfigService<Env, true>) {
         const privateKey = config.get('JWT_PRIVATE_KEY', { infer: true });
         const publicKey = config.get('JWT_PUBLIC_KEY', { infer: true });
@@ -23,6 +23,7 @@ import { JwtStrategy } from './jwt.strategy';
       },
     }),
   ],
+  exports: [JwtModule],
   providers: [JwtStrategy],
 })
 export class AuthModule {}
