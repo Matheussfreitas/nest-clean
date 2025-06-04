@@ -1,6 +1,6 @@
 import { Body, Controller, HttpCode, Post, UsePipes } from '@nestjs/common';
-import { ZodValidationPipe } from 'src/pipes/zod-validation-pipe';
-import { CreateAccountService } from 'src/services/create-account.service';
+import { ZodValidationPipe } from '@//pipes/zod-validation-pipe';
+import { CreateAccountService } from '@//services/create-account.service';
 import { z } from 'zod';
 
 const CreateAccountSchema = z.object({
